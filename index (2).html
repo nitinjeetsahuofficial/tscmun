@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SCMUN 2027 | The Sovereign Council Model United Nations</title>
+<meta name="description" content="SCMUN 2027, The Sovereign Council Model United Nations: a free, independent Model UN conference on 1–2 May 2027. Diplomacy. Dialogue. Decisions.">
+<meta name="theme-color" content="#0b2545">
+<meta property="og:title" content="SCMUN 2027 | The Sovereign Council Model United Nations">
+<meta property="og:description" content="An independent, 100% free Model United Nations conference. 1–2 May 2027.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b2545'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%238fc1e8' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23f6efe0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0b2545; --navy-2:#13315c; --blue:#4f8fc9; --sky:#8fc1e8; --sky-soft:#e6f1fa;
+  --cream:#f6efe0; --cream-2:#fbf8f1; --white:#fff; --ink:#1b2a41; --muted:#56657d;
+  --line:#d8e3ee; --gold:#b89b5e;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --radius:14px; --shadow:0 10px 30px rgba(11,37,69,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream-2);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--blue)}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--navy);line-height:1.15;margin:0 0 .5em;font-weight:700}
+h2{font-size:clamp(2rem,4vw,2.9rem)}
+h3{font-size:1.55rem}
+p{margin:0 0 1em}
+.container{width:min(1140px,92%);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:.7rem 1rem;z-index:200}
+.skip:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+
+/* Nav */
+header.site{position:sticky;top:0;z-index:100;background:rgba(11,37,69,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(143,193,232,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:.7rem;color:#fff;text-decoration:none}
+.brand svg{width:40px;height:40px;flex:none}
+.brand b{font-family:var(--serif);font-size:1.5rem;letter-spacing:.06em;line-height:1}
+.brand small{display:block;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sky);margin-top:3px}
+.menu{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+.menu a{color:#dbe8f5;text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.02em;padding:.4rem 0;border-bottom:2px solid transparent}
+.menu a:hover{color:#fff;border-color:var(--sky)}
+.menu a.cta{background:var(--sky);color:var(--navy);padding:.5rem 1rem;border-radius:999px;border:0;font-weight:600}
+.menu a.cta:hover{background:#fff}
+.burger{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:.45rem .7rem;font-size:1rem;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;color:#fff;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 60%,#1d4a7d 100%);overflow:hidden;padding:clamp(4rem,10vw,8rem) 0 clamp(4rem,8vw,6.5rem)}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 85% 20%,rgba(143,193,232,.25),transparent 45%),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 90px);pointer-events:none}
+.hero-emblem{position:absolute;right:-120px;top:50%;transform:translateY(-50%);width:min(640px,70vw);opacity:.16;pointer-events:none}
+.hero .container{position:relative}
+.eyebrow{font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--sky);font-weight:600}
+.hero h1{color:#fff;font-size:clamp(3.4rem,10vw,7rem);letter-spacing:.04em;margin:.15em 0 0}
+.hero .full{font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.9rem);letter-spacing:.14em;text-transform:uppercase;color:var(--cream);margin:.2rem 0 1.4rem}
+.motto{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3.4vw,2.2rem);color:var(--sky);margin:0 0 1.2rem}
+.dates{display:inline-block;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:.55rem 1.2rem;letter-spacing:.28em;font-weight:600;font-size:1.05rem;color:var(--cream)}
+.hero .sub{margin:1.3rem 0 2rem;color:#cfe0f1;font-size:1.1rem}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid transparent;cursor:pointer;font-family:var(--sans);transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--sky);color:var(--navy)}
+.btn-primary:hover{background:#fff}
+.btn-ghost{border-color:var(--sky);color:#fff;background:transparent}
+.btn-ghost:hover{background:rgba(143,193,232,.18)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{background:var(--navy-2)}
+.btn-outline{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.mymun{margin-top:1.8rem;font-size:.95rem;color:#cfe0f1}
+.mymun a{color:#fff;font-weight:600;word-break:break-all}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(143,193,232,.25);border-radius:var(--radius);overflow:hidden;margin-top:3rem}
+.facts div{background:rgba(11,37,69,.6);padding:1rem 1.2rem}
+.facts span{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sky)}
+.facts strong{font-family:var(--serif);font-size:1.5rem;color:#fff;font-weight:600}
+
+/* Sections */
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+.alt{background:var(--sky-soft)}
+.cream{background:var(--cream)}
+.sec-head{max-width:720px;margin-bottom:2.5rem}
+.kicker{font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);font-weight:600;display:block;margin-bottom:.6rem}
+.rule{width:64px;height:3px;background:var(--gold);border:0;margin:1rem 0 0}
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:start}
+.pillars{display:grid;gap:1rem}
+.pillar{background:#fff;border-left:4px solid var(--blue);padding:1.1rem 1.3rem;border-radius:0 var(--radius) var(--radius) 0;box-shadow:var(--shadow)}
+.pillar h3{font-size:1.4rem;margin:0 0 .2rem}
+.pillar p{margin:0;color:var(--muted);font-size:.95rem}
+.free-banner{background:var(--navy);color:#fff;border-radius:var(--radius);padding:1.4rem 1.6rem;display:flex;gap:1rem;align-items:center;margin-top:2.5rem}
+.free-banner .badge{flex:none;font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--navy);background:var(--sky);border-radius:999px;padding:.35rem 1.1rem}
+.free-banner p{margin:0}
+
+/* Cards */
+.grid{display:grid;gap:1.4rem}
+.grid.c3{grid-template-columns:repeat(auto-fill,minmax(310px,1fr))}
+.grid.c4{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;box-shadow:var(--shadow);display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,37,69,.15)}
+.card::before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:linear-gradient(90deg,var(--navy),var(--sky));border-radius:var(--radius) var(--radius) 0 0}
+.abbr{font-family:var(--serif);font-size:2.3rem;font-weight:700;color:var(--blue);letter-spacing:.04em;line-height:1}
+.card h3{font-size:1.3rem;margin:.35rem 0 .6rem}
+.card p{color:var(--muted);font-size:.95rem}
+.tag{display:inline-block;background:var(--sky-soft);color:var(--navy-2);font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:.25rem .65rem;border-radius:999px;margin-bottom:1rem;align-self:flex-start}
+.card .btn{margin-top:auto;align-self:flex-start}
+
+/* Applications */
+.app-card .num{font-family:var(--serif);font-size:3rem;color:var(--sky);font-weight:700;line-height:1}
+details{margin:.4rem 0 1.2rem;border-top:1px solid var(--line);padding-top:.7rem}
+summary{cursor:pointer;font-weight:600;font-size:.9rem;color:var(--navy)}
+details ul{margin:.6rem 0 0;padding-left:1.1rem;color:var(--muted);font-size:.9rem}
+details li{margin-bottom:.3rem}
+.apply-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:2rem}
+.apply-info div{background:#fff;border:1px dashed var(--blue);border-radius:var(--radius);padding:1rem 1.2rem;font-size:.92rem}
+.apply-info b{display:block;color:var(--navy);margin-bottom:.2rem}
+
+/* Secretariat */
+.person{text-align:center;align-items:center}
+.photo{width:110px;height:110px;border-radius:50%;background:var(--sky-soft);border:2px dashed var(--sky);display:grid;place-items:center;margin-bottom:1rem;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo svg{width:44px;height:44px;opacity:.5}
+.person h3{font-size:1.25rem;margin-bottom:.2rem}
+.person .name{color:var(--muted);font-style:italic;font-size:.92rem;margin:0}
+
+/* Terms */
+.terms-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.4rem,4vw,3rem);box-shadow:var(--shadow);max-width:860px}
+.terms-wrap ol{margin:0;padding:0;list-style:none;counter-item:t}
+.terms-wrap li{counter-increment:t;padding:1.2rem 0 1.2rem 3.4rem;border-bottom:1px solid var(--line);position:relative}
+.terms-wrap li:last-child{border:0}
+.terms-wrap li::before{content:counter(t);position:absolute;left:0;top:1.15rem;width:2.3rem;height:2.3rem;border-radius:50%;background:var(--navy);color:var(--sky);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:1.15rem}
+.terms-wrap h3{font-size:1.25rem;margin:0 0 .25rem}
+.terms-wrap p{margin:0;color:#33425a;font-size:.98rem}
+.toc{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
+.toc a{font-size:.8rem;text-decoration:none;background:var(--sky-soft);color:var(--navy-2);padding:.3rem .7rem;border-radius:999px;font-weight:500}
+.toc a:hover{background:var(--navy);color:#fff}
+.updated{font-size:.85rem;color:var(--muted);margin-top:1.4rem}
+
+/* Contact */
+.contact-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.contact-list .card{padding:1.3rem 1.4rem}
+.contact-list h3{font-size:1.1rem;font-family:var(--sans);font-weight:600;margin-bottom:.3rem}
+.contact-list a,.contact-list span{word-break:break-word;font-size:.95rem}
+.contact-list .ph{color:var(--muted);font-style:italic}
+
+/* Footer */
+footer{background:var(--navy);color:#cfe0f1;padding:3.5rem 0 1.5rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:start}
+footer h2{color:#fff;font-size:2rem;margin-bottom:.1rem}
+footer .full{text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--sky)}
+footer .m{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--cream);margin-top:.8rem}
+footer ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.5rem}
+footer a{color:#dbe8f5;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.legal{border-top:1px solid rgba(143,193,232,.25);margin-top:2.5rem;padding-top:1.2rem;font-size:.8rem;color:#9db6d0}
+
+/* Dialog */
+dialog{border:0;border-radius:var(--radius);padding:0;width:min(640px,92vw);box-shadow:0 30px 80px rgba(0,0,0,.4);color:var(--ink)}
+dialog::backdrop{background:rgba(11,37,69,.7)}
+.dlg-head{background:var(--navy);color:#fff;padding:1.4rem 1.6rem;display:flex;justify-content:space-between;gap:1rem;align-items:flex-start}
+.dlg-head h3{color:#fff;margin:0;font-size:1.5rem}
+.dlg-head small{color:var(--sky);letter-spacing:.2em;text-transform:uppercase;font-size:.7rem}
+.dlg-close{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:50%;width:36px;height:36px;font-size:1.1rem;cursor:pointer;flex:none}
+.dlg-body{padding:1.5rem 1.6rem 1.8rem;max-height:65vh;overflow:auto}
+.dlg-body h4{font-family:var(--sans);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin:1.2rem 0 .4rem}
+.dlg-body h4:first-child{margin-top:0}
+.tba{background:var(--cream);border-left:4px solid var(--gold);padding:.8rem 1rem;border-radius:0 8px 8px 0;font-size:.93rem}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn,.card{transition:none}}
+
+@media (max-width:900px){
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:68px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:.6rem 4%;border-bottom:1px solid rgba(143,193,232,.25)}
+  .menu.open{display:flex}
+  .menu li a{display:block;padding:.8rem 0;border-bottom:1px solid rgba(143,193,232,.15)}
+  .menu a.cta{display:inline-block;margin:.8rem 0}
+  .about-grid,.foot-grid{grid-template-columns:1fr}
+  .hero-emblem{right:-40%;opacity:.1}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .free-banner{flex-direction:column;align-items:flex-start}
+  .btns .btn{flex:1 1 100%;text-align:center}
+  footer ul{grid-template-columns:1fr}
+}
+@media print{header.site,.hero-emblem,.btns,dialog{display:none}section{padding:1rem 0}}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- Reusable original SCMUN emblem (not the UN emblem) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="emblem" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="3"/>
+    <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <circle cx="100" cy="100" r="46" fill="none" stroke="currentColor" stroke-width="2"/>
+    <ellipse cx="100" cy="100" rx="46" ry="94" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <ellipse cx="100" cy="100" rx="94" ry="46" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <line x1="100" y1="6" x2="100" y2="194" stroke="currentColor" stroke-width="1.2"/>
+    <line x1="6" y1="100" x2="194" y2="100" stroke="currentColor" stroke-width="1.2"/>
+    <g fill="currentColor">
+      <circle cx="100" cy="20" r="6"/><circle cx="176" cy="75" r="6"/><circle cx="147" cy="165" r="6"/>
+      <circle cx="53" cy="165" r="6"/><circle cx="24" cy="75" r="6"/>
+    </g>
+    <path d="M100 82l5.5 12 13 1.5-9.7 8.8 2.8 12.9-11.6-6.6-11.6 6.6 2.8-12.9-9.7-8.8 13-1.5z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<header class="site">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="SCMUN 2027 home">
+      <svg style="color:#8fc1e8" aria-hidden="true"><use href="#emblem"/></svg>
+      <span><b>SCMUN</b><small>2027 · Est. 2026</small></span>
+    </a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Toggle navigation">☰ Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#committees">Committees</a></li>
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#secretariat">Secretariat</a></li>
+      <li><a href="#terms">Terms &amp; Conditions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<div class="hero" id="top">
+  <svg class="hero-emblem" style="color:#8fc1e8" aria-hidden="true"><use href="#emblem"/></svg>
+  <div class="container">
+    <span class="eyebrow">First Edition · An Independent Platform for Global Minds</span>
+    <h1>SCMUN 2027</h1>
+    <div class="full">The Sovereign Council Model United Nations</div>
+    <p class="motto">“Diplomacy. Dialogue. Decisions.”</p>
+    <div class="dates">1–2 MAY 2027</div>
+    <p class="sub">An Independent Model United Nations Conference &nbsp;·&nbsp; <strong>100% Free to Apply and Attend</strong></p>
+    <div class="btns">
+      <a class="btn btn-primary" href="#committees">Explore Committees</a>
+      <a class="btn btn-ghost" data-link="mymun" href="https://mymun.com/conferences/tscmun-2027" target="_blank" rel="noopener">Official MyMUN Page ↗</a>
+    </div>
+    <p class="mymun">Official MyMUN page: <a data-link="mymun" data-text="1" href="https://mymun.com/conferences/tscmun-2027" target="_blank" rel="noopener">https://mymun.com/conferences/tscmun-2027</a></p>
+    <div class="facts" aria-label="Key facts">
+      <div><span>Dates</span><strong>1–2 May 2027</strong></div>
+      <div><span>Established</span><strong>2026</strong></div>
+      <div><span>Committees</span><strong>5</strong></div>
+      <div><span>Language</span><strong>English</strong></div>
+      <div><span>Fees</span><strong>None</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="kicker">About SCMUN</span>
+        <h2>The Sovereign Council Model United Nations</h2>
+        <hr class="rule">
+        <p style="margin-top:1.5rem">The Sovereign Council Model United Nations (SCMUN) is an independent Model United Nations initiative established in 2026 with the vision of fostering diplomatic awareness, critical thinking, leadership and international cooperation among young individuals.</p>
+        <p>SCMUN seeks to create an intellectually stimulating platform where delegates engage in structured debate, represent diverse national perspectives and deliberate upon pressing global challenges.</p>
+        <p>Through diplomacy, dialogue and collaborative problem-solving, SCMUN aims to empower the next generation of leaders and responsible global citizens.</p>
+        <p><strong>First Conference:</strong> SCMUN 2027.</p>
+      </div>
+      <div class="pillars reveal">
+        <div class="pillar"><h3>Diplomacy</h3></div>
+        <div class="pillar"><h3>Dialogue</h3></div>
+        <div class="pillar"><h3>Decisions</h3></div>
+      </div>
+    </div>
+    <div class="free-banner reveal">
+      <span class="badge">FREE</span>
+      <p>All applications and participation at SCMUN 2027 are completely FREE. No registration, application, selection or participation fees are charged.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITTEES -->
+<section id="committees" class="alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Committees</span>
+      <h2>Our Committees</h2>
+      <hr class="rule">
+    </div>
+    <div class="grid c3" id="committee-grid"></div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section id="applications">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Applications &amp; Registration</span>
+      <h2>Apply through MyMUN</h2>
+      <hr class="rule">
+    </div>
+    <div class="free-banner reveal" style="margin:0 0 2rem">
+      <span class="badge">FREE</span>
+      <p>All applications and participation at SCMUN 2027 are completely FREE. No registration, application, selection or participation fees are charged.</p>
+    </div>
+    <p class="reveal" style="max-width:720px">Applications are made on the official MyMUN conference page: <a data-link="mymun" data-text="1" href="https://mymun.com/conferences/tscmun-2027" target="_blank" rel="noopener">https://mymun.com/conferences/tscmun-2027</a></p>
+    <div class="grid c4" id="apply-grid"></div>
+    <p class="updated">Submission of an application does not guarantee acceptance, selection or a particular country allocation. See the <a href="#terms">Terms &amp; Conditions</a>.</p>
+  </div>
+</section>
+
+<!-- SECRETARIAT -->
+<section id="secretariat" class="cream">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Executive Committee</span>
+      <h2>Secretariat</h2>
+      <hr class="rule">
+    </div>
+    <div class="grid c4" id="exec-grid"></div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section id="terms">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Legal</span>
+      <h2>Terms &amp; Conditions</h2>
+      <hr class="rule">
+    </div>
+    <div class="terms-wrap">
+      <nav class="toc" aria-label="Terms sections" id="toc"></nav>
+      <ol id="terms-list"></ol>
+      
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="kicker">Contact</span>
+      <h2>Contact</h2>
+      <hr class="rule">
+    </div>
+    <div class="contact-list" id="contact-list"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h2>SCMUN 2027</h2>
+        <div class="full">The Sovereign Council Model United Nations</div>
+        <p style="margin:.6rem 0 0">Established 2026</p>
+        <p class="m">Diplomacy. Dialogue. Decisions.</p>
+      </div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#committees">Committees</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#secretariat">Secretariat</a></li>
+        <li><a href="#terms">Terms &amp; Conditions</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <p class="legal">SCMUN is an independent Model United Nations initiative. It is not affiliated with, or endorsed by, the United Nations or any government body. The United Nations emblem is not used on this site.</p>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <div><small id="dlg-abbr"></small><h3 id="dlg-title"></h3></div>
+    <button class="dlg-close" id="dlg-close" aria-label="Close details">✕</button>
+  </div>
+  <div class="dlg-body" id="dlg-body"></div>
+</dialog>
+
+<script>
+/* =====================================================================
+   EDITABLE CONTENT: change anything in this block. No other code needs
+   touching. Add committee agendas, allocations and names here later.
+   ===================================================================== */
+const SITE = {
+  mymun: "https://mymun.com/conferences/tscmun-2027",
+
+  contact: [
+    { label: "Email",     value: "thesovereigncouncilmun@gmail.com", href: "mailto:thesovereigncouncilmun@gmail.com" },
+    { label: "Instagram", value: "@tscmun", href: "https://www.instagram.com/tscmun/" }
+  ],
+
+  /* Add agenda and allocation items later; they appear only once filled. */
+  committees: [
+    { abbr:"UNSC", name:"United Nations Security Council",
+      blurb:"Maintains international peace and security.",
+      agenda:[], allocation:[] , notes:"" },
+    { abbr:"UNHRC", name:"United Nations Human Rights Council",
+      blurb:"Promotes and protects human rights around the world.",
+      agenda:[], allocation:[], notes:"" },
+    { abbr:"ECOSOC", name:"Economic and Social Council",
+      blurb:"Coordinates global economic, social and sustainable development work.",
+      agenda:[], allocation:[], notes:"" },
+    { abbr:"CCPCJ", name:"Commission on Crime Prevention and Criminal Justice",
+      blurb:"Addresses crime prevention and criminal justice.",
+      agenda:[], allocation:[], notes:"" },
+    { abbr:"UNEA", name:"United Nations Environment Assembly",
+      blurb:"Sets priorities for global environmental policy.",
+      agenda:[], allocation:[], notes:"" }
+  ],
+
+  applications: [
+    { title:"Chair" },
+    { title:"Head Delegate" },
+    { title:"Delegate" },
+    { title:"Internal Staff / Executive Board" }
+  ],
+
+  /* Add names / photo URLs later; the name line appears only once filled. */
+  executive: [
+    { role:"Secretary-General", name:"", photo:"" },
+    { role:"Deputy Secretary-General", name:"", photo:"" },
+    { role:"Director-General", name:"", photo:"" },
+    { role:"Chief of Staff", name:"", photo:"" },
+    { role:"Under-Secretaries-General", name:"", photo:"" },
+    { role:"Committee Chairs", name:"", photo:"" },
+    { role:"Vice-Chairs", name:"", photo:"" }
+  ],
+
+  terms: [
+    ["General Information","SCMUN is an independent Model United Nations initiative. Participation does not imply affiliation with or endorsement by the United Nations or any government body."],
+    ["Eligibility","Applicants must provide accurate personal and academic information. Any age-related requirements will be communicated by the Secretariat."],
+    ["Registration","Submission of an application does not guarantee acceptance, selection or a particular country allocation."],
+    ["No Fees","All applications and participation are free. SCMUN will not charge registration, application, selection or participation fees. Applicants should not pay anyone claiming to collect fees on behalf of SCMUN."],
+    ["Code of Conduct","All participants must maintain respectful, inclusive and professional behaviour. Harassment, discrimination, bullying, threats, impersonation and disruptive conduct are prohibited."],
+    ["Academic Integrity","Delegates must conduct genuine research, respect diplomatic procedures and avoid plagiarism or fabricated sources."],
+    ["Selection","Secretariat appointments, chairing positions, staff roles and delegate allocations are subject to the organisers' selection process. Decisions will be communicated through official channels."],
+    ["Schedule and Changes","The Secretariat reserves the right to modify agendas, schedules, committee arrangements or conference procedures when necessary. Participants will be informed of significant changes."],
+    ["Attendance","Selected participants are expected to attend their assigned sessions and fulfil their responsibilities."],
+    ["Privacy","Personal information collected through applications will be used for conference administration and communication. It must not be publicly disclosed without appropriate permission, except where legally required."],
+    ["Media Consent","Photographs, recordings or testimonials may only be published with appropriate consent."],
+    ["Cancellation","The Secretariat may postpone, modify or cancel the conference if circumstances make it necessary. Participants will be informed through official communication channels."],
+    ["Acceptance","By submitting an application, participants confirm that they have read and agreed to these Terms & Conditions."]
+  ]
+};
+/* ===================== END EDITABLE CONTENT ===================== */
+
+const $ = (s, r=document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* MyMUN links */
+document.querySelectorAll('[data-link="mymun"]').forEach(a => {
+  a.href = SITE.mymun;
+  if (a.dataset.text) a.textContent = SITE.mymun;
+});
+
+/* Committees */
+const cg = $('#committee-grid');
+SITE.committees.forEach((c, i) => {
+  cg.insertAdjacentHTML('beforeend', `
+    <article class="card reveal">
+      <span class="abbr">${esc(c.abbr)}</span>
+      <h3>${esc(c.name)}</h3>
+      <p>${esc(c.blurb)}</p>
+      <button class="btn btn-outline" data-i="${i}" aria-haspopup="dialog">View Details</button>
+    </article>`);
+});
+const dlg = $('#dlg');
+cg.addEventListener('click', e => {
+  const b = e.target.closest('button[data-i]'); if (!b) return;
+  const c = SITE.committees[b.dataset.i];
+  $('#dlg-abbr').textContent = c.abbr;
+  $('#dlg-title').textContent = c.name;
+  const list = arr => `<ul>${arr.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+  $('#dlg-body').innerHTML = `
+    <p>${esc(c.blurb)}</p>
+    ${c.agenda.length ? `<h4>Agenda</h4>${list(c.agenda)}` : ''}
+    ${c.allocation.length ? `<h4>Country Allocation</h4>${list(c.allocation)}` : ''}
+    ${c.notes ? `<h4>Notes</h4><p>${esc(c.notes)}</p>` : ''}`;
+  dlg.showModal();
+});
+$('#dlg-close').addEventListener('click', () => dlg.close());
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+/* Applications */
+const ag = $('#apply-grid');
+SITE.applications.forEach((a, i) => {
+  ag.insertAdjacentHTML('beforeend', `
+    <article class="card app-card reveal">
+      <span class="num">${String(i+1).padStart(2,'0')}</span>
+      <h3>${esc(a.title)}</h3>
+    </article>`);
+});
+
+/* Executive committee */
+const eg = $('#exec-grid');
+const personIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="#13315c" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.5 4-6 8-6s7 1.500 8 6"/></svg>';
+SITE.executive.forEach(p => {
+  eg.insertAdjacentHTML('beforeend', `
+    <article class="card person reveal">
+      <div class="photo">${p.photo ? `<img src="${esc(p.photo)}" alt="Portrait of ${esc(p.name || p.role)}" loading="lazy">` : personIcon}</div>
+      <h3>${esc(p.role)}</h3>
+      ${p.name ? `<p class="name">${esc(p.name)}</p>` : ''}
+    </article>`);
+});
+
+/* Terms */
+const tl = $('#terms-list'), toc = $('#toc');
+SITE.terms.forEach(([h, t], i) => {
+  tl.insertAdjacentHTML('beforeend', `<li id="t${i+1}"><h3>${esc(h)}</h3><p>${esc(t)}</p></li>`);
+  toc.insertAdjacentHTML('beforeend', `<a href="#t${i+1}">${i+1}. ${esc(h)}</a>`);
+});
+
+/* Contact */
+const cl = $('#contact-list');
+SITE.contact.forEach(c => {
+  const placeholder = /^\[/.test(c.value);
+  const inner = c.href ? `<a href="${esc(c.href)}" target="_blank" rel="noopener">${esc(c.value)}</a>`
+                       : `<span class="${placeholder ? 'ph' : ''}">${esc(c.value)}</span>`;
+  cl.insertAdjacentHTML('beforeend', `<div class="card reveal"><h3>${esc(c.label)}</h3>${inner}</div>`);
+});
+
+
+/* Mobile menu */
+const burger = $('#burger'), menu = $('#menu');
+burger.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+});
+menu.addEventListener('click', e => { if (e.target.tagName === 'A') { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); } });
+
+/* Reveal on scroll */
+const els = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  els.forEach(el => io.observe(el));
+} else els.forEach(el => el.classList.add('in'));
+</script>
+</body>
+</html>
